@@ -1,4 +1,4 @@
-# Case, 2021
+# Case, 2022
 ## Nettbureau AS
 
 Du skal ha mottatt en fil på e-post.
