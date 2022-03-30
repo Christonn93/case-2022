@@ -6,12 +6,12 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- 
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
+html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -97,26 +97,114 @@ textarea {
 
 
 
- /* ==========================================================================
+/* ==========================================================================
    Author's custom styles
    ========================================================================== */
+* {
+    box-sizing: border-box;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
 
+    margin: 0;
+    padding: 0;
+}
 
+header {
+    display: inline-block;
+    background-color: hsla(240, 45%, 31%, 0.781);
+    padding: 1.25rem;
+}
 
+.logo {
+    max-width: 130px;
+}
 
+/* === Contact form === */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 25px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.form-field {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
 
+.input-control {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 18px;
+}
 
+.zip,
+.input-control .zip {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 15px;
+}
 
+#cityName {
+    align-self: center;
+}
 
+label {
+    display: flex;
+    font-size: 18px;
+    margin-bottom: .5rem;
+}
 
+input,
+textarea {
+    display: flex;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 18px;
+}
 
+input:focus,
+textarea:focus {
+    outline: none;
+}
 
+.form-success {
+    border-color: #09c372;
+}
 
+.form-error{
+    border-color: #ff3860;
+}
 
+.input-control.form-success input,
+.input-control.form-success textarea {
+    border-color: #09c372;
+}
 
- /* ==========================================================================
+.input-control.form-error input,
+.input-control.form-error textarea {
+    border-color: #ff3860;
+}
+
+.input-control .form-error {
+    color: #ff3860;
+    font-size: 16px;
+}
+
+/* ==========================================================================
    Helper classes
    ========================================================================== */
 
@@ -124,8 +212,8 @@ textarea {
  * Hide visually and from screen readers
  */
 
- .hidden {
-  display: none !important;
+.hidden {
+    display: none !important;
 }
 
 /*
@@ -138,15 +226,16 @@ textarea {
 */
 
 .visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap; /* 1 */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -157,13 +246,13 @@ textarea {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-  white-space: inherit;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
 }
 
 /*
@@ -171,7 +260,7 @@ textarea {
 */
 
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 /*
@@ -188,45 +277,49 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
- 
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
-   @media only screen and (min-width: 35em) {
+@media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
- 
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-   @media print {
+@media print {
+
     *,
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster */
+        color: #000 !important;
+        /* Black prints faster */
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
@@ -238,11 +331,11 @@ textarea {
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: " ("attr(href) ")";
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: " ("attr(title) ")";
     }
 
     /*
@@ -258,6 +351,7 @@ textarea {
     pre {
         white-space: pre-wrap !important;
     }
+
     pre,
     blockquote {
         border: 1px solid #999;
@@ -290,5 +384,3 @@ textarea {
         page-break-after: avoid;
     }
 }
-
-

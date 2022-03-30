@@ -1,35 +1,97 @@
 <!doctype html> 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Contact us</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <header>
+    <img src="./logo-nettbureau-com.svg" class="logo" />
+  </header>
+  <main id="main">
+    <div class="container">
+      <div class="form-wrapper">  
+      <form class="contact-form" method="POST" id="c-form" action="/">
+        <h2>Kontakt oss</h2>
+        <div class="form-field">
 
-<section>
-<form action="">
-<fieldset>
-    <legend>Informasjon</legend>
-    <label>Navn:</label>
-    <input type="text" name="name" value="" placeholder="Ola Nordmann"><br>
-    <label>E-post:</label>
-    <input type="email" name="email" value="" placeholder="navn@domene.no"><br>
-    <label>Telefon:</label>
-    <input type="tel" name="phone" value="" placeholder="XXX XX XXX"><br>
-    <label>Postnummer:</label>
-    <input type="number" name="areacode" value="" max="9999" placeholder="1234"><br>
-    <label>Kommentar:</label>
-    <textarea name="comment"></textarea>
-    <br />
-    <button type="submit">Send inn!</button>
-  </fieldset>
-</form>
-</section>
+          <div class="input-control">
+          <label for="fname" class="c-label">Fornavn:</label>
+            <input type="text" name="first_name" id="fname" placeholder="Ola"  />
+            <div class="form-error"></div>
+        </div>
+      
+        <div class="input-control">
+          <label for="lname" class="c-label">Etternavn:</label>
+            <input type="text" name="last_name" id="lname" placeholder="Norman"  />
+            <div class="form-error"></div>
+        </div>
+      </div>
 
+        <div class="form-field">
+          <div class="input-control">
+          <label for="email" class="c-label">E-post:</label>
+            <input type="text" name="email" id="email" placeholder="navn@domnene.com"  />
+            <div class="form-error"></div>
+        </div>
+          
+        <div class="input-control">
+          <label for="phone" class="c-label">Telefon nummer:</label>
+            <input type="text" name="phone" id="phone" placeholder="+47 xxx xx xxx"  />
+            <div class="form-error"></div>
+          </div>
+        </div>
+      
+        <div class="form-field">
+          <div class="input-control">
+          <label for="adress" class="c-label">Adresse:</label>
+            <input type="text" name="adress" id="adress" placeholder="Gatenavn"  />
+            <div class="form-error"></div>
+        </div>
+          
+        <div class="input-control">
+          <label for="zip" class="c-label">Postnummer:</label>
+          <div class="input-control">
+          <div class="zip">
+            <input type="text" name="zip" id="zipCode" placeholder="Ex: 3770"  />
+            <div class="form-error"></div>
+            <label id="cityName"></label>
+          </div>
+        </div>  
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="input-control">
+          <label for="message" class="c-label">Melding:</label>
+            <textarea rows="5" name="message" id="message" placeholder="Skriv din melding her" ></textarea>
+            <div class="form-error"></div>
+          </div>
+          
+        </div>
+      
+        <div class="form-field">
+          <label for="comfirm">
+          <input type="checkbox"/>
+            Ved å sende dette skjema godkejnner du <a href="#popup">dette</a>
+        </label>
+            <button type="submit" id="submit" class="cta">Send skjema</button>
+        </div>
+        <p id="result" class="hidden"></p>
+      </form>
+    </div>
+    <div class="hidden" id="popup">
+      <p>Jeg godkjenner at dere lagrer min data i henhold til forskrifter</p>
+    </div>
+    </div>
+  </main>
+  <footer></footer>
+<script src="./js/bringAPI.js"></script>
+<script src="./js/formVali.js"></script>
 </body>
 
 </html>
