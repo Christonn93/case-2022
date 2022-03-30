@@ -179,6 +179,7 @@ textarea {
 input:focus,
 textarea:focus {
     outline: none;
+    border: 1px solid rgb(187, 97, 12);
 }
 
 .form-success {
@@ -203,6 +204,109 @@ textarea:focus {
     color: #ff3860;
     font-size: 16px;
 }
+
+.confirm {
+    display: flex;
+    gap: 5px;
+}
+
+.cta {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin: 5px;
+    max-width: max-content;
+
+    background-color: hsla(240, 45%, 31%, 0.781);
+    border-radius: 2rem;
+    border: 1px solid var(--red);
+    filter: drop-shadow(0px 0px 4px var(--red));
+
+    text-decoration: none;
+    color: white;
+    transform: translateZ(0);
+}
+
+.cta:hover {
+    cursor: pointer;
+    filter: none;
+    box-shadow: 0px 0px 15px 0px rgba(9, 13, 20, 0.685);
+    -webkit-animation-name: pulse-shrink;
+    animation-name: pulse-shrink;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@media (hover) {
+    .card-content {
+        transform: translateY(60%);
+        transition: transform 500ms ease;
+    }
+
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+        transform: translateY(10%);
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+
+    .card-content>*:not(.card-title) {
+        opacity: 0;
+        transition: opacity 600ms ease;
+    }
+
+    .card:hover .card-content>*:not(.card-title),
+    .card:focus-within .card-content>*:not(.card-title) {
+        opacity: 1;
+        transition-delay: 1000ms;
+
+        transition-duration: 0ms;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+/* Pulse Shrink */
+
+@-webkit-keyframes pulse-shrink {
+    to {
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+    }
+}
+
+@keyframes pulse-shrink {
+    to {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(0.9);
+    }
+}
+
 
 /* ==========================================================================
    Helper classes
